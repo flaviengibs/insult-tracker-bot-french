@@ -23,9 +23,9 @@ client.on('messageCreate', message => {
     console.log("Message received : " + message);
     if(containsBannedWord(message)) {
       console.log("Mot banni détecté");
-      message.delete;
+      await message.delete();
       console.log("Message supprimé");
-      message.channel.send("Un mot banni a été détecté. Le message a été supprimé.");
+      await message.channel.send(`${message.author}, votre message a été supprimé car il contenait un mot interdit.`);
     } else {
       console.log("Pas de mot banni");
     }
