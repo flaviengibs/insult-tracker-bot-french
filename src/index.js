@@ -7,7 +7,7 @@ const client = new Client({
     GatewayIntentBits.GuildMembers
   ]
 });
-let bannedWords = ["putain", "merde", "chiant", "con", "salope", "salopard", "pute", "fdp", "salaud", "ta mère la", "porn","chiasse", "bite", "zizi", "encullé", "enculleur", "couille", "sexe", "sex", "pornographie", "porno", "pornography", "enculé", "enculée", "49.3"];
+let bannedWords = ["putain", "merde", "chiant", "con", "salope", "salopard", "pute", "fdp", "salaud", "ta mère la", "porn","chiasse", "bite", "zizi", "encullé", "enculleur", "couille", "sexe", "sex", "pornographie", "porno", "pornography", "enculé", "enculée", "49.3", "tepu", "ta mère la chienne", "ton père le client", "cul", "Le traqueur d'insultes motivé est relou", "connard", "connasse", "enculler", "couilles", "cul", "le petit cul de "];
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
