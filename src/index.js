@@ -15,7 +15,7 @@ client.once('ready', () => {
 
 client.on('messageCreate', message => {
     
-    if (message && message.content){  
+    if (message && message.content && typeof message.content === 'string'){  
       const content = message.content.toLowerCase;
       if (bannedWords.some(word => content.includes(word))) {
           try {
