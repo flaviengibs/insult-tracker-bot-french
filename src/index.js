@@ -13,18 +13,20 @@ client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+function containsBannedWord(message) {
+  const lowerCaseMessage = message.toLowerCase();
+  return bannedWords.some(word => lowerCaseMessage.includes(word.toLowerCase()));
+}
+
 client.on('messageCreate', message => {
-    
-    if (message && message.content && typeof message.content === 'string'){  
-      const content = message.content.toLowerCase;
-      if (bannedWords.some(word => content.includes(word))) {
-          try {
-              message.delete();
-              message.channel.send(`Message supprimé car il contenait un mot interdit.`);
-          } catch (error) {
-              console.error('Erreur lors de la suppression du message:', error);
-          }
-      }
+    console.log("Message received : " + message);
+    if(containsBannedWord(message) {
+      console.log("Mot banni détecté");
+      message.delete;
+      console.log("Message supprimé");
+      message.channel.send("Un mot banni a été détecté. Le message a été supprimé.");
+    } else {
+      console.log("Pas de mot banni");
     }
 }); 
 
