@@ -13,7 +13,7 @@ client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('messageCreate', message => {
+client.on('messageCreate', async (message) => {
     const content = message.toLowerCase;
     if (bannedWords.some(word => content.includes(word))) {
         try {
