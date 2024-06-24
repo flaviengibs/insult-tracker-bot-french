@@ -7,7 +7,7 @@ const client = new Client({
     GatewayIntentBits.GuildMembers
   ]
 });
-let badWords = ["putain", "merde", "chiant", "con", "salope", "salopard", "pute", "fdp", "salaud", "ta mère la", "porn","chiasse", "bite", "zizi", "encullé", "enculleur", "couilles"];
+let bannedWords = ["putain", "merde", "chiant", "con", "salope", "salopard", "pute", "fdp", "salaud", "ta mère la", "porn","chiasse", "bite", "zizi", "encullé", "enculleur", "couilles"];
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
