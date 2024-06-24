@@ -7,21 +7,24 @@ const client = new Client({
     GatewayIntentBits.GuildMembers
   ]
 });
-let bannedWords = ["putain ", "merde ", "chiant", "con ", "salope ", "salopard ", "pute ", "fdp ", "salaud ", "ta mère la ", "porn","chiasse ", "bite ", "zizi ", "encullé ", "enculleur ", "couille"];
+let bannedWords = ["putain", "merde", "chiant", "con", "salope", "salopard", "pute", "fdp", "salaud", "ta mère la", "porn","chiasse", "bite", "zizi", "encullé", "enculleur", "couille"];
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-function containsBannedWord(message) {
-  const content = message.content ? message.content : message;
-  const lowerCaseMessage = content.toLowerCase();
-  return bannedWords.some(word => lowerCaseMessage.includes(word.toLowerCase()));
+
+function containsExactWord(message) {
+  return bannedWords.some(word => {
+    const regex = new RegExp(`\\b${word}\\b`, 'i'); // 'i' pour insensible à la casse
+    return regex.test(message.content);
+  });
 }
+
 
 client.on('messageCreate', message => {
     console.log("Message received : " + message);
-    if(containsBannedWord(message)) {
+    if(containsExactWord(message)) {
       console.log("Mot banni détecté");
       message.delete();
       console.log("Message supprimé");
