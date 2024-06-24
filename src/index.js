@@ -14,15 +14,18 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    const content = message.toLowerCase;
-    if (bannedWords.some(word => content.includes(word))) {
-        try {
-            message.delete();
-            message.channel.send(`Message supprimé car il contenait un mot interdit.`);
-        } catch (error) {
-            console.error('Erreur lors de la suppression du message:', error);
-        }
-        }
+    
+    if (message && message.content){  
+      const content = message.toLowerCase;
+      if (bannedWords.some(word => content.includes(word))) {
+          try {
+              message.delete();
+              message.channel.send(`Message supprimé car il contenait un mot interdit.`);
+          } catch (error) {
+              console.error('Erreur lors de la suppression du message:', error);
+          }
+      }
+    }
 }); 
 
 client.login("MTI1NDUwMDYxNTgzNzU4MTQxNQ.G4MtI6.iCltycI67Evwv0Mp283bphLIde7pCYT8hCSUS8");
