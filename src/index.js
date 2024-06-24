@@ -1,9 +1,12 @@
 const { Client, GatewayIntentBits } = require('discord.js');
-
-const keepAlive = require('./server'); // Importer le fichier server.js
-
-const client = new Client(intents:8);
-
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers
+  ]
+});
 let badWords["putain", "merde", "chiant", "con", "salope", "salopard", "pute", "fdp", "salaud", "ta mère la", "porn","chiasse", "bite", "zizi", "encullé", "enculleur", "couilles"]
 
 client.once('ready', () => {
