@@ -14,7 +14,8 @@ client.once('ready', () => {
 });
 
 function containsBannedWord(message) {
-  const lowerCaseMessage = message.toLowerCase();
+  const content = message.content ? message.content : message;
+  const lowerCaseMessage = content.toLowerCase();
   return bannedWords.some(word => lowerCaseMessage.includes(word.toLowerCase()));
 }
 
