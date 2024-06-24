@@ -20,7 +20,7 @@ function containsBannedWord(message) {
 
 client.on('messageCreate', message => {
     console.log("Message received : " + message);
-    if(containsBannedWord(message) {
+    if(containsBannedWord(message)) {
       console.log("Mot banni détecté");
       message.delete;
       console.log("Message supprimé");
