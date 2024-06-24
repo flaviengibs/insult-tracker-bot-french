@@ -13,12 +13,12 @@ client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('messageCreate', async (message) => {
+client.on('messageCreate', message => {
     const content = message.toLowerCase;
     if (bannedWords.some(word => content.includes(word))) {
         try {
-            await message.delete();
-            await message.channel.send(`Message supprimé car il contenait un mot interdit.`);
+            message.delete();
+            message.channel.send(`Message supprimé car il contenait un mot interdit.`);
         } catch (error) {
             console.error('Erreur lors de la suppression du message:', error);
         }
