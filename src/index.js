@@ -62,7 +62,12 @@ client.on('messageCreate', message => {
       console.log("Mot banni détecté");
       message.delete();
       console.log("Message supprimé");
-      message.channel.send(`${message.author}, veuillez ne pas utiliser de termes offensants ou inappropriés. Votre message a été supprimé`);
+      message.channel.send(`${message.author}, veuillez ne pas utiliser de termes offensants ou inappropriés. Votre message a été supprimé.`);
+    } else if (message.content.includes("enculé"){
+      console.log("Le message contient enculé.");
+      message.delete();
+      console.log("Message supprimé")
+      message.channel.send(`${message.author}, veuillez ne pas utiliser de termes offensants ou inappropriés. Votre message a été supprimé.`)
     } else {
       console.log("Pas de mot banni");
     }
