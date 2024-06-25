@@ -19,7 +19,7 @@ let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bo
     "porno", "pornographie", "pédophile", "viol", "violer", "violeur", "inceste", "sodomie", "baiser", 
     "branler", "branlette", "cul", "puter", "sucer", "suceur", "ta gueule", "nique ta mère", "nique", 
     "niquer", "enculer", "trouduc", "pute à fric", "batard", "pd", "conn**d", "c*n", "enfoir*", "enc*l*", 
-    "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", "tepu", "ptn", "mrd", "slpe", "salope va"];
+    "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", "tepu", "ptn", "mrd", "slpe", "salope va", "chit", "ta mère la", "ta mere la" ];
 
 
 
@@ -30,6 +30,17 @@ client.once('ready', () => {
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
+
+// Fonction pour supprimer les accents
+function removeAccents(string) {
+    return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+// Ajout des versions sans accents des mots
+const bannedWordsSansAccents = bannedWords.map(removeAccents);
+
+// Fusion des listes d'insultes originales et sans accents
+const allInsultes = [...bannedWords, ...bannedWordsSansAccents];
 
 const escapedBannedWords = bannedWords.map(escapeRegExp);
 
@@ -43,7 +54,7 @@ function containsExactWord(message, wordList) {
 
 client.on('messageCreate', message => {
     console.log("Message received : " + message);
-    if(containsExactWord(message, escapedBannedWords)) {
+    if(containsExactWord(message.content, escapedBannedWords)) {
       console.log("Mot banni détecté");
       message.delete();
       console.log("Message supprimé");
