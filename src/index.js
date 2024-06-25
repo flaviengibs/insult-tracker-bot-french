@@ -63,7 +63,7 @@ client.on('messageCreate', message => {
       message.delete();
       console.log("Message supprimé");
       message.channel.send(`${message.author}, veuillez ne pas utiliser de termes offensants ou inappropriés. Votre message a été supprimé.`);
-    } else if (message.content.includes("enculé")){
+    } else if (message.content.includes("enculé") || message.content.includes('encullé')){
       console.log("Le message contient enculé.");
       message.delete();
       console.log("Message supprimé")
