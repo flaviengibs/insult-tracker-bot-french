@@ -11,7 +11,7 @@ let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bo
     "couillon", "crétin", "débile", "enfoiré", "encullé", "enculé", "espèce de", "imbécile", "idiot", "imbécile heureux",
     "imbécile profond","inutile", "merde", "merdeux", "nase", "naze", "nul", "pédé", "putain", 
     "pute", "salope", "taré", "teubé", "trou du cul", "tarlouze", "truffe", "abruti fini", "andouille de première", 
-    "bouffon de service", "casse-couilles", "crétin de base", "débile profond", "enculé", "encullé", "enculler"
+    "bouffon de service", "casse-couilles", "crétin de base", "débile profond", "enculé", "encullé", "enculler",
     "espèce de saloperie", "fils de pute", "gros con", "handicapé du cerveau", "incapable notoire", 
     "inutilité publique", "merde ambulante", "merde infâme", "nase complet", "naze absolu", "nul à chier", 
     "putain de merde", "pute à fric", "sale con", "salope finie", "taré complet", "teubé notoire", 
