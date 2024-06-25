@@ -34,7 +34,7 @@ let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bo
     "branler", "branlette", "cul", "puter", "sucer", "suceur", "ta gueule", "nique ta mere", "nique",
     "niquer", "enculer", "trouduc", "pute a fric", "batard", "pd", "conn**d", "c*n", "enfoir*", "enc*l*",
     "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", 
-    "tepu", "ptn", "mrd", "slpe", "salope va", "chit", "ta mere la", "ta mere la" ];
+    "tepu", "ptn", "mrd", "slpe", "salope va", "chit", "ta mere la", "ta mere la", "49.3", "macron démission" ];
 
 
 
