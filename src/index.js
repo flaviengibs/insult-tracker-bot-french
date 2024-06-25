@@ -31,7 +31,7 @@ function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-const escapedInsultes = insultes.map(escapeRegExp);
+const escapedBannedWords = bannedWords.map(escapeRegExp);
 
 function containsExactWord(message, wordList) {
   return bannedWords.some(word => {
@@ -43,7 +43,7 @@ function containsExactWord(message, wordList) {
 
 client.on('messageCreate', message => {
     console.log("Message received : " + message);
-    if(containsExactWord(message, escapedInsultes)) {
+    if(containsExactWord(message, escapedBannedWords)) {
       console.log("Mot banni détecté");
       message.delete();
       console.log("Message supprimé");
