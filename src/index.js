@@ -21,12 +21,19 @@ let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bo
     "niquer", "enculer", "trouduc", "pute à fric", "batard", "pd", "conn**d", "c*n", "enfoir*", "enc*l*", 
     "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", "tepu", "ptn", "mrd", "slpe", "salope va"];
 
+
+
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 
-function containsExactWord(message) {
+const escapedInsultes = insultes.map(escapeRegExp);
+
+function containsExactWord(message, wordList) {
   return bannedWords.some(word => {
     const regex = new RegExp(`\\b${word}\\b`, 'i'); // 'i' pour insensible à la casse
     return regex.test(message.content);
@@ -36,11 +43,11 @@ function containsExactWord(message) {
 
 client.on('messageCreate', message => {
     console.log("Message received : " + message);
-    if(containsExactWord(message)) {
+    if(containsExactWord(message, escapedInsultes)) {
       console.log("Mot banni détecté");
       message.delete();
       console.log("Message supprimé");
-      message.channel.send(`${message.author}, votre message a été supprimé car il contenait un mot interdit.`);
+      message.channel.send(`${message.author}, veuillez ne pas utiliser de termes offensants ou inappropriés. Votre message a été supprimé`);
     } else {
       console.log("Pas de mot banni");
     }
