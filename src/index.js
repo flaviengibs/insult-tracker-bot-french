@@ -14,12 +14,27 @@ let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bo
     "bouffon de service", "casse-couilles", "crétin de base", "débile profond", "enculé de tes morts", 
     "espèce de saloperie", "fils de pute", "gros con", "handicapé du cerveau", "incapable notoire", 
     "inutilité publique", "merde ambulante", "merde infâme", "nase complet", "naze absolu", "nul à chier", 
-    "pédale", "putain de merde", "pute à fric", "sale con", "salope finie", "taré complet", "teubé notoire", 
+    "putain de merde", "pute à fric", "sale con", "salope finie", "taré complet", "teubé notoire", 
     "trou du cul fini", "tarlouze en puissance", "truffe de compétition", "salaud", "salopard", "porn", 
     "porno", "pornographie", "pédophile", "viol", "violer", "violeur", "inceste", "sodomie", "baiser", 
     "branler", "branlette", "cul", "puter", "sucer", "suceur", "ta gueule", "nique ta mère", "nique", 
     "niquer", "enculer", "trouduc", "pute à fric", "batard", "pd", "conn**d", "c*n", "enfoir*", "enc*l*", 
-    "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", "tepu", "ptn", "mrd", "slpe", "salope va", "chit", "ta mère la", "ta mere la" ];
+    "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", "tepu",
+    "ptn", "mrd", "slpe", "salope va", "chit", "ta mère la", "ta mere la", "abruti", "andouille",
+    "arriere", "batard", "bouffon", "connard", "conne", "connasse", "con",
+    "couillon", "cretin", "debile", "enfoire", "encule", "espece de", "imbecile", "idiot", "imbecile heureux",
+    "imbecile profond", "incapable", "inutile", "merde", "merdeux", "nase", "naze", "nul", "pede", "putain",
+    "pute", "salope", "tare", "teube", "trou du cul", "tarlouze", "truffe", "abruti fini", "andouille de premiere",
+    "bouffon de service", "casse-couilles", "cretin de base", "debile profond", "encule de tes morts",
+    "espece de saloperie", "fils de pute", "gros con", "handicape du cerveau", "incapable notoire",
+    "inutilite publique", "merde ambulante", "merde infame", "nase complet", "naze absolu", "nul a chier",
+    "putain de merde", "pute a fric", "sale con", "salope finie", "tare complet", "teube notoire",
+    "trou du cul fini", "tarlouze en puissance", "truffe de competition", "salaud", "salopard", "porn",
+    "porno", "pornographie", "pedophile", "viol", "violer", "violeur", "inceste", "sodomie", "baiser",
+    "branler", "branlette", "cul", "puter", "sucer", "suceur", "ta gueule", "nique ta mere", "nique",
+    "niquer", "enculer", "trouduc", "pute a fric", "batard", "pd", "conn**d", "c*n", "enfoir*", "enc*l*",
+    "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", 
+    "tepu", "ptn", "mrd", "slpe", "salope va", "chit", "ta mere la", "ta mere la" ];
 
 
 
@@ -31,18 +46,7 @@ function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// Fonction pour supprimer les accents
-function removeAccents(string) {
-    return string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-}
-
-// Ajout des versions sans accents des mots
-const bannedWordsSansAccents = bannedWords.map(removeAccents);
-
-// Fusion des listes d'insultes originales et sans accents
-const allInsultes = [...bannedWords, ...bannedWordsSansAccents];
-
-const escapedBannedWords = allInsultes.map(escapeRegExp);
+const escapedBannedWords = bannedWords.map(escapeRegExp);
 
 function containsExactWord(message, wordList) {
   return wordList.some(word => {
