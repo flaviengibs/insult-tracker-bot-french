@@ -50,15 +50,15 @@ const escapedBannedWords = bannedWords.map(escapeRegExp);
 
 function containsExactWord(messageContent, wordList) {
   return wordList.some(word => {
-    const regex = new RegExp(`\\b${word}\\b`, 'i'); // 'i' pour insensible à la casse
+    const regex = new RegExp(`\\b${escapeRegExp(word)}\\b`, 'gi');// 'i' pour insensible à la casse
     return regex.test(messageContent);
   });
 }
 
 
 client.on('messageCreate', message => {
-    console.log("Message received : " + message);
-    if(containsExactWord(message.content, escapedBannedWords)) {
+    console.log("Message received : " + message.content);
+    if(containsExactWord(message.cleanContent, escapedBannedWords)) {
       console.log("Mot banni détecté");
       message.delete();
       console.log("Message supprimé");
