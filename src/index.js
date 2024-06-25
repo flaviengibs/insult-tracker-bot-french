@@ -42,7 +42,7 @@ const bannedWordsSansAccents = bannedWords.map(removeAccents);
 // Fusion des listes d'insultes originales et sans accents
 const allInsultes = [...bannedWords, ...bannedWordsSansAccents];
 
-const escapedBannedWords = bannedWords.map(escapeRegExp);
+const escapedBannedWords = allInsultes.map(escapeRegExp);
 
 function containsExactWord(message, wordList) {
   return wordList.some(word => {
