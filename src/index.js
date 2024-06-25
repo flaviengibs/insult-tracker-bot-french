@@ -7,7 +7,19 @@ const client = new Client({
     GatewayIntentBits.GuildMembers
   ]
 });
-let bannedWords = ["putain", "merde", "chiant", "con", "salope", "salopard", "pute", "fdp", "salaud", "ta mère la", "porn","chiasse", "bite", "zizi", "encullé", "enculleur", "couille", "sexe", "sex", "pornographie", "porno", "pornography", "enculé", "enculée", "49.3", "tepu", "ta mère la chienne", "ton père le client", "cul", "Le traqueur d'insultes motivé est relou", "connard", "connasse", "enculler", "couilles", "cul", "le petit cul de "];
+let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bouffon", "connard", "conne", "connasse", "con",
+    "couillon", "crétin", "débile", "enfoiré", "enculé", "espèce de", "imbécile", "idiot", "imbécile heureux",
+    "imbécile profond", "incapable", "inutile", "merde", "merdeux", "nase", "naze", "nul", "pédé", "putain", 
+    "pute", "salope", "taré", "teubé", "trou du cul", "tarlouze", "truffe", "abruti fini", "andouille de première", 
+    "bouffon de service", "casse-couilles", "crétin de base", "débile profond", "enculé de tes morts", 
+    "espèce de saloperie", "fils de pute", "gros con", "handicapé du cerveau", "incapable notoire", 
+    "inutilité publique", "merde ambulante", "merde infâme", "nase complet", "naze absolu", "nul à chier", 
+    "pédale", "putain de merde", "pute à fric", "sale con", "salope finie", "taré complet", "teubé notoire", 
+    "trou du cul fini", "tarlouze en puissance", "truffe de compétition", "salaud", "salopard", "porn", 
+    "porno", "pornographie", "pédophile", "viol", "violer", "violeur", "inceste", "sodomie", "baiser", 
+    "branler", "branlette", "cul", "puter", "sucer", "suceur", "ta gueule", "nique ta mère", "nique", 
+    "niquer", "enculer", "trouduc", "pute à fric", "batard", "pd", "conn**d", "c*n", "enfoir*", "enc*l*", 
+    "fdp", "fils de p*", "mer**", "sa*ope", "tr** du cul", "n*que", "su**r", "s*x", "s*xe", "p*rn", "p*do", "tepu", "ptn", "mrd", "slpe", "salope va"];
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
