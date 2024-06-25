@@ -8,7 +8,7 @@ const client = new Client({
   ]
 });
 let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bouffon", "connard", "conne", "connasse", "con",
-    "couillon", "crétin", "débile", "enfoiré", "encullé", "enculé" "espèce de", "imbécile", "idiot", "imbécile heureux",
+    "couillon", "crétin", "débile", "enfoiré", "encullé", "enculé", "espèce de", "imbécile", "idiot", "imbécile heureux",
     "imbécile profond", "incapable", "inutile", "merde", "merdeux", "nase", "naze", "nul", "pédé", "putain", 
     "pute", "salope", "taré", "teubé", "trou du cul", "tarlouze", "truffe", "abruti fini", "andouille de première", 
     "bouffon de service", "casse-couilles", "crétin de base", "débile profond", 
