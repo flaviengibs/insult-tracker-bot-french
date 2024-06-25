@@ -34,7 +34,7 @@ function escapeRegExp(string) {
 const escapedBannedWords = bannedWords.map(escapeRegExp);
 
 function containsExactWord(message, wordList) {
-  return bannedWords.some(word => {
+  return wordList.some(word => {
     const regex = new RegExp(`\\b${word}\\b`, 'i'); // 'i' pour insensible à la casse
     return regex.test(message.content);
   });
