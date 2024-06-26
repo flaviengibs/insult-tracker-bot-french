@@ -28,6 +28,16 @@ jobs:
       run: npm install 
       working-directory: ./src
       
+    - name: Install dotenv
+      run: npm install dotenv
+      working-directory: ./src
+
+    - name: Create .env file
+      run: echo DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} > .env
+      working-directory: ./src
+      
     - name: run the bot
       run: node index.js
+      env:
+        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
       working-directory: ./src
