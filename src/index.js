@@ -73,4 +73,4 @@ client.on('messageCreate', message => {
     }
 }); 
 
-client.login("MTI1NDUwMDYxNTgzNzU4MTQxNQ.G4MtI6.iCltycI67Evwv0Mp283bphLIde7pCYT8hCSUS8");
+client.login("");
