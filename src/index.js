@@ -9,7 +9,7 @@ const client = new Client({
 });
 let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bouffon", "connard", "conne", "connasse", "con",
     "couillon", "crétin", "débile", "enfoiré", "encullé", "enculé", "espèce de", "imbécile", "idiot", "imbécile heureux",
-    "imbécile profond","inutile", "merde", "merdeux", "nase", "naze", "nul", "pédé", "putain", 
+    "imbécile profond", "merde", "merdeux", "nase", "naze", "nul", "pédé", "putain", 
     "pute", "salope", "taré", "teubé", "trou du cul", "tarlouze", "truffe", "abruti fini", "andouille de première", 
     "bouffon de service", "casse-couilles", "crétin de base", "débile profond", "enculé", "encullé", "enculler",
     "espèce de saloperie", "fils de pute", "gros con", "handicapé du cerveau", "incapable notoire", 
@@ -23,7 +23,7 @@ let bannedWords = ["abruti", "andouille", "anormal", "arriéré", "bâtard", "bo
     "ptn", "mrd", "slpe", "salope va", "chit", "ta mère la", "ta mere la", "abruti", "andouille",
     "arriere", "batard", "bouffon", "connard", "conne", "connasse", "con",
     "couillon", "cretin", "debile", "enfoire", "encule", "espece de", "imbecile", "idiot", "imbecile heureux",
-    "imbecile profond", "inutile", "merde", "merdeux", "nase", "naze", "nul", "pede", "putain",
+    "imbecile profond", "merde", "merdeux", "nase", "naze", "nul", "pede", "putain",
     "pute", "salope", "tare", "teube", "trou du cul", "tarlouze", "truffe", "abruti fini", "andouille de premiere",
     "bouffon de service", "casse-couilles", "cretin de base", "debile profond",
     "espece de saloperie", "fils de pute", "gros con", "handicape du cerveau", "incapable notoire",
